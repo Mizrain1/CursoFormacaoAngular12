@@ -1,0 +1,31 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+import { ConversorComponent } from './components/conversor.component';
+import { MoedaService, ConversorService } from './services';
+import { NumeroDirective } from './directives';
+import { ModalCotacaoComponent } from './utils/modal-cotacao.component';
+
+
+@NgModule({
+  declarations: [
+    ConversorComponent,
+    NumeroDirective,
+    ModalCotacaoComponent
+  ],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    FormsModule
+  ],
+  exports: [
+    ConversorComponent
+  ],
+  providers: [
+    MoedaService,
+    ConversorService
+  ]
+})
+export class ConversorModule { }
